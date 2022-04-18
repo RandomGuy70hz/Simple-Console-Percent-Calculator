@@ -13,8 +13,8 @@ begin
 
 import re
 def calculate_percent():
-    freshstart = True
-    while freshstart:
+    initiate = True
+    while initiate:
         x = input('Enter first number: ')
         if re.match("[^\d]", x):
             print('Try again')
@@ -23,27 +23,43 @@ def calculate_percent():
             if re.match("[^\d]", y):
                 print('Try again')
             else:
-                my_percent = int(x) / int(y) * 100
-                result = f'{x} out of {y} is {my_percent}%'
+                calculate_percent = int(x) / int(y) * 100 # check for errors, may conflict with funciton name
+                result = f'{x} out of {y} is {calculate_percent}%'
                 print(result)
-                freshstart = False
+                initiate = False
 
 def user():
-    greeting = input('Welcome. Would you like to get a percentage? ')
-    if greeting == 'yes':
+    greeting = input(
+"""
+Howdy'
+
+Would you like to get a percentage? 
+
+Type y to continue... 
+Press any other key to quit.
+
+""")
+    if greeting == 'y':
         calculate_percent()
-        init = True
-        while init:
-            control = input('Would you like to do another? ')
-            if control == 'yes':
+        initiate = True
+        while initiate:
+            control = input(
+"""
+Would you like to do another? 
+
+Type y to continue... 
+Press any other key to quit.
+
+""")
+            if control == 'y':
                 calculate_percent()
             else:
                 print('Cya')
-                init = False
+                initiate = False
                 break
     else:
         print('Cya')
-        init = False
+        initiate = False
         return
 
 user()
