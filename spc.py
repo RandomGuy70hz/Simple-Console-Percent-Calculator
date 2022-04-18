@@ -28,7 +28,7 @@ def calculate_percent():
                 print(result)
                 initiate = False
 
-def user():
+def greet():
     greeting = input(
 """
 Howdy'
@@ -62,7 +62,7 @@ Press any other key to quit.
         initiate = False
         return
 
-user()
+greet()
 
 
 
